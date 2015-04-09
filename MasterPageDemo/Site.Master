@@ -1,0 +1,137 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.Master.vb" Inherits="MasterPageDemo.Site" %>
+
+<!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="<%=TwoLetterLangName %>"dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="<%=TwoLetterLangName %>" dir="ltr">
+<!--<![endif]-->
+<head runat="server">
+<meta charset="utf-8">
+<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+<title>
+</title>
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<!-- Meta data -->
+<meta name="description" content="">
+<meta name="dcterms.title" content="">
+<meta name="dcterms.creator" content="">
+<meta name="dcterms.issued" title="W3CDTF" content="">
+<meta name="dcterms.modified" title="W3CDTF" content="">
+<meta name="dcterms.subject" title="scheme" content="">
+<meta name="dcterms.language" title="ISO639-2" content="eng">
+<!-- Meta data-->
+<!--[if gte IE 9 | !IE ]><!-->
+<link href="/wet-v4/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/wet-v4/css/wet-boew.min.css">
+<!--<![endif]-->
+<link rel="stylesheet" href="/wet-v4/css/theme.min.css">
+<!--[if lt IE 9]>
+<link href="/wet-v4/assets/favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="/wet-v4/css/ie8-wet-boew.min.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/wet-v4/js/ie8-wet-boew.min.js"></script>
+<![endif]-->
+<noscript><link rel="stylesheet" href="/wet-v4/css/noscript.min.css" /></noscript>
+</head>
+<body vocab="http://schema.org/" typeof="WebPage">
+<ul id="wb-tphp">
+<li class="wb-slc">
+<asp:HyperLink ID="HyperLinkSkipToMain" runat="server" CssClass="wb-sl" 
+        NavigateUrl="#wb-cont" Text="Skip to main content" 
+        meta:resourcekey="HyperLinkSkipToMainResource1" />
+</li>
+<li class="wb-slc visible-sm visible-md visible-lg">
+<asp:HyperLink ID="HyperLinkSkipToAbout" runat="server" CssClass="wb-sl" 
+        NavigateUrl="#wb-info" Text="Skip to &quot;About this site&quot;" 
+        meta:resourcekey="HyperLinkSkipToAboutResource1" />
+</li>
+</ul>
+<header role="banner">
+<div id="wb-bnr">
+<div id="wb-bar">
+<div class="container">
+<div class="row">
+<asp:Localize ID="LocalizeGcwuSig" runat="server" meta:resourcekey="LocalizeGcwuSigResource1">
+    <object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="/wet-v4/assets/sig-blk-en.svg" aria-label="Government of Canada"></object>
+</asp:Localize>
+<section id="wb-lng"><h2><asp:Localize ID="LocalizeLanguageSelection" runat="server" 
+        Text="Language selection" meta:resourcekey="LocalizeLanguageSelectionResource1" /></h2>
+<ul class="list-inline">
+<li><asp:HyperLink ID="HyperLinkLanguage" runat="server" lang="fr" NavigateUrl="" Text="Français" meta:resourcekey="HyperLinkLanguageResource1" /></li>
+</ul>
+</section>
+<section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
+<h2><asp:Localize ID="LocalizeSearchAndMenus" runat="server" 
+        Text="Search and menus" meta:resourcekey="LocalizeSearchAndMenusResource1" /></h2>
+<ul class="pnl-btn list-inline text-right">
+<li><asp:HyperLink ID="HyperLinkSearchAndMenus" runat="server" 
+        NavigateUrl="#mb-pnl" ToolTip="Search and menus" aria-controls="mb-pnl" 
+        CssClass="overlay-lnk btn btn-sm btn-default" role="button" 
+        meta:resourcekey="HyperLinkSearchAndMenusResource1">
+        <span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span>
+        </asp:HyperLink></li>
+</ul>
+<div id="mb-pnl"></div>
+</section>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div id="wb-sttl" class="col-md-12">
+<asp:HyperLink ID="HyperLinkHome1" runat="server" NavigateUrl="Default.aspx" 
+        meta:resourcekey="HyperLinkHome1Resource1"><span>App Title</span></asp:HyperLink>
+<object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="/wet-v4/assets/wmms-intra.svg" aria-label="Symbol of the Government of Canada"></object>
+</div>
+</div>
+</div>
+</div>
+<span data-trgt="mb-pnl" class="wb-menu hide"></span>
+<nav role="navigation" id="wb-bc" property="breadcrumb">
+<h2><asp:Localize ID="LocalizeYouAreHere" runat="server" Text="You are here:" 
+        meta:resourcekey="LocalizeYouAreHereResource1" /></h2>
+<div class="container">
+<div class="row">
+<ol class="breadcrumb">
+<li>
+<asp:HyperLink ID="HyperLinkHome2" runat="server" NavigateUrl="Home.aspx" 
+        Text="Home" meta:resourcekey="HyperLinkHome2Resource1" />
+</li>
+<asp:ContentPlaceHolder id="contentPlaceHolderBreadCrumb" runat="server"></asp:ContentPlaceHolder>
+<li><%=Page.Title%></li>
+</ol>
+</div>
+</div>
+</nav>
+</header>
+<main role="main" property="mainContentOfPage" class="container">
+<h1 id="wb-cont" property="name"><%=Page.Title%></h1>
+<asp:ContentPlaceHolder id="contentPlaceHolderMainContent" runat="server"></asp:ContentPlaceHolder>
+<dl id="wb-dtmd">
+<dt><asp:Localize ID="LocalizeDateModified" runat="server" Text="Date modified:" 
+        meta:resourcekey="LocalizeDateModifiedResource1" />&#32;</dt>
+<dd><time property="dateModified"><%=Me.PageModified%></time></dd>
+</dl>
+</main>
+<footer role="contentinfo" id="wb-info" class="visible-sm visible-md visible-lg wb-navcurr">
+<div class="container">
+<nav role="navigation">
+<h2><asp:Localize ID="LocalizeAboutSite" runat="server" Text="About this site" 
+        meta:resourcekey="LocalizeAboutSiteResource1" /></h2>
+<ul id="gc-tctr" class="list-inline">
+<li><asp:HyperLink ID="HyperLinkTerms" runat="server" rel="licence" 
+        NavigateUrl="http://www.cic.gc.ca/english/notices.asp" 
+        Text="Terms and conditions" meta:resourcekey="HyperLinkTermsResource1" /></li>
+</ul>
+</nav>
+</div>
+</footer>
+<!--[if gte IE 9 | !IE ]><!-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/wet-v4/js/wet-boew.min.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="/wet-v4/js/ie8-wet-boew2.min.js"></script>
+<![endif]-->
+<script src="/wet-v4/js/theme.min.js"></script>
+</body>
+</html>
